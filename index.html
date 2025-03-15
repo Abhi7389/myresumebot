@@ -83,6 +83,13 @@
       margin-right: 8px;
     }
   </style>
+  <script>
+    function redirectToThankYou(event, url) {
+      event.preventDefault();
+      localStorage.setItem('redirectUrl', url);
+      window.location.href = 'thankyou.html';
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -91,9 +98,9 @@
       <h1>Abhit Shukla</h1>
       <div class="contact-info">
         <span><i class="fa-solid fa-phone"></i> +91 73890 82938</span> |
-        <a href="mailto:shukla.abhit.5@gmail.com"><i class="fa-solid fa-envelope"></i> Gmail</a> |
-        <a href="https://maps.app.goo.gl/PcygPEBb1U2YArcU9" class="location"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra</a> |
-        <a href="https://www.linkedin.com/in/abhit-shukla/" class="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:shukla.abhit.5@gmail.com" onclick="redirectToThankYou(event, 'mailto:shukla.abhit.5@gmail.com')"><i class="fa-solid fa-envelope"></i> Gmail</a> |
+        <a href="https://maps.app.goo.gl/PcygPEBb1U2YArcU9" class="location" onclick="redirectToThankYou(event, 'https://maps.app.goo.gl/PcygPEBb1U2YArcU9')"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra</a> |
+        <a href="https://www.linkedin.com/in/abhit-shukla/" class="linkedin" onclick="redirectToThankYou(event, 'https://www.linkedin.com/in/abhit-shukla/')"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
       </div>
     </div>
 
@@ -135,14 +142,14 @@
         <p>
           Utilized Python to identify the factors affecting various anomalies. Implemented CNN for modeling and used Random Forest algorithm to analyze data anomalies.
         </p>
-        <a href="#" class="button"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="#" class="button" onclick="redirectToThankYou(event, '#')"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
       <div class="project">
         <h3>Azure Static Web Apps CI/CD</h3>
         <p>
           Automated CI/CD pipeline for deploying a web application to Azure Static Web Apps. Integrated GitHub Actions for builds and managed environment deployments with a cleanup process for preview deployments.
         </p>
-        <a href="https://github.com/Abhi7389/myresumebot.git" class="button"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://github.com/Abhi7389/myresumebot.git" class="button" onclick="redirectToThankYou(event, 'https://github.com/Abhi7389/myresumebot.git')"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
     </div>
 
@@ -153,6 +160,11 @@
         <li>Value Added Course on Design Thinking and Logic Development - Symbiosis Institute of Computer Science and Research</li>
         <li>Value Added Course - Corporate Readiness - Symbiosis Institute of Computer Science and Research</li>
       </ul>
+    </div>
+
+    <!-- Contact Button -->
+    <div style="width: 100%; text-align: center;">
+      <a href="contact.html" class="button contact-button"><i class="fa-solid fa-envelope"></i> Contact Me</a>
     </div>
   </div>
 </body>
